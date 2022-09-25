@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .search input {
+        height: 60px;
+        position: relative;
+        top: -20px;
+        left: 40px;
+        border: 2px solid #d6d4d4;
+    }
+
+    .fa {
+        position: relative;
+        top: 20px;
+    }
+
+    .btn1 {
+        position: relative;
+        left: 905px;
+        top: -75px;
+        height: 50px;
+        border-radius: 20px;
+    }
+
+    h2 {
+        position: relative;
+        left: 50px;
+    }
+
+    div.card {
+        position: relative;
+        left: 40px;
+        margin: 10px;
+        min-height: 40px;
+    }
+
+    html {
+        background-color: #212529;
+        color: #899095;
+    }
+
+    body.dark {
+        background-color: #212529;
+        color: #899095;
+    }
+
+    .produto {
+        display: inline-block;
+    }
+</style>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <title>Lojas Mil!</title>
+</head>
+
+<body class="row height d-flex align-items-center dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="search col-md-6">
+                    <i class="fa fa-search" style="position: relative; left: 20px"></i>
+                    <input type="text" id="produtos" class="form-control col-md-6 search"
+                        placeholder="Pesquise o produto" onkeyup="search_product()">
+                </div>
+                <h2>Produtos</h2>
+                <div class="col-md-8">
+                    <div class="card produto" style="width: 18rem; display: inline-block;">
+                        <img src="assets/Spiderman.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Spiderman toy</h5>
+                            <p class="card-text">Brinquedo Homem Aranha Clássico.</p>
+                            <a href="Spider.html" class="btn btn-primary">Ver mais</a>
+                        </div>
+                    </div>
+                    <div class="card produto" style="width: 18rem; display: inline-block;">
+                        <img src="assets/IronMan.jfif" class="card-img-top produto" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Iron-Man Toy</h5>
+                            <p class="card-text">Brinquedo do Homem de Ferro Clássico.</p>
+                            <a href="Ironman.html" class="btn btn-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code
+        function search_product() {
+            let input = document.getElementById('produtos').value
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('produto');
+
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                }
+                else {
+                    x[i].style.display = "list-item";
+                }
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>
